@@ -7,10 +7,23 @@
 
 # So far, coding help has only come from w3schools.com, class assignments, and the Mobile App "SoloLearn"
 
-#import os
-#os.startfile("C:\\Users\\Browney\\Desktop\\starwars.mp3")
-
 import time
+
+def calculateDifficulty(num1, num2, num3):
+    total = num1 + num2 + num3
+    return total
+
+def main():
+    question_easy = (question6 + question7 + question9 + question10) * 5
+    #print(question_easy) #used for testing purposes
+    question_medium = (question3 + question5 + question8) * 9
+    #print(question_medium) #used for testing purposes
+    question_hard = (question1 + question2 + question4) * 15
+    #print(question_hard) #used for testing purposes
+    score = calculateDifficulty(question_easy, question_medium, question_hard)
+    score *= 45
+    print("Your Score =", score)
+    
 print("******** *********   *****   *********   *** *** ***   *****   ********* ********")
 time.sleep(1)
 print("******** ********* ***   *** ***   ***   *** *** *** ***   *** ***   *** ********")
@@ -117,290 +130,295 @@ else:
     print("Incorrect")
     question10 = 0
 
-question_easy = (question6 + question7 + question9 + question10) * 5
-#print(question_easy) #used for testing purposes
-question_medium = (question3 + question5 + question8) * 9
-#print(question_medium) #used for testing purposes
-question_hard = (question1 + question2 + question4) * 15
-#print(question_hard) #used for testing purposes
-
-test1 = question_easy + question_medium + question_hard
-#print(test1) #used for testing purposes
-test1 *= 45
-#print(test1) #used for testing purposes
 print("\n20,001 and above = THE CHOSEN ONE!")
 print("15,001 to 20,000 = Jedi Master")
 print("10,001 to 15,000 = Padawan")
 print("5,001 to 10,000  = Youngling")
 print("5,000 and below  = Force-sensitive\n")
-print("Your Score =", test1)
+
+main()
 
 retryStory = "s"
 while retryStory == "s":
-    if test1 >= 0: # thinking about a way to only allow certain number inputs depending on test results
-        print("\nChoose your adventure carefully and may the Force be with you!")
-        num_choice = int(input("Pick a whole number from 1-9: "))
-        if num_choice == 1:
-            episode1_title = "\nEpisode I \nTHE PHANTOM "
-            noun1 = input("\nEnter a singular NOUN: ")
-            noun2 = input("Enter another singular NOUN: ")
-            adjective1 = input("Enter an ADJECTIVE: ")
-            adjective2 = input("Enter another ADJECTIVE: ")
-            noun3 = input("Enter a plural NOUN: ")
-            adjective3 = input("Enter another ADJECTIVE: ")
-            verb1 = input("Enter a past tense VERB: ")
-            noun4 = input("Enter another plural NOUN: ")
-            adverb1 = input("Enter an ADVERB: ")
-            verb2 = input("Enter a present tense VERB: ")
-            adjective4 = input("Enter another ADJECTIVE: ")
-            noun5 = input("Enter another plural NOUN: ")
-            adjective5 = input("Enter another ADJECTIVE: ")
-            verb3 = input("Enter a past tense VERB: ")
-            num_adj1 = input("Enter any whole number greater than 1: ")
-            noun6 = input("Enter another plural NOUN: ")
-            noun7 = input("Enter another plural NOUN: ")
-            print(episode1_title + noun1)
-            print("Turmoil has engulfed the")
-            print("Galactic", noun2 + ".", "The taxation")
-            print("of", adjective1, "routes to outlying", adjective2)
-            print("systems is in dispute.")
-            print("\nHoping to resolve the matter")
-            print("with a blockade of deadly")
-            print(noun3 + ",", "the", adjective3, "Trade")
-            print("Federation has", verb1, "all")
-            print(noun4, "to the", adjective4, "planet")
-            print("of Naboo.")
-            print("\nWhile the Congress of the")
-            print("Republic", adverb1, verb2)
-            print("this alarming chain of", noun5 + ",")
-            print("the", adjective5, "Chancellor has")
-            print("secretly", verb3, num_adj1, "Jedi")
-            print("Knights, the guardians of")
-            print(noun6, "and", noun7, "in the")
-            print("galaxy, to settle the conflict....")
-        elif num_choice == 2:
-            episode2_title = "\nEpisode II \nATTACK OF THE "
-            noun8 = input("\nEnter a plural NOUN: ")
-            num_adj2 = input("Enter any whole number greater than 1: ")
-            verb4 = input("Enter a past tense VERB: ")
-            verb5 = input("Enter a present tense VERB: ")
-            adjective6 = input("Enter an ADJECTIVE: ")
-            adjective7 = input("Enter another ADJECTIVE: ")
-            adjective8 = input("Enter another ADJECTIVE: ")
-            verb6 = input("Enter a present tense VERB: ")
-            noun9 = input("Enter another plural NOUN: ")
-            noun10 = input("Enter another plural NOUN: ")
-            adjective9 = input("Enter another ADJECTIVE: ")
-            verb7 = input("Enter a present tense VERB: ")
-            adjective10 = input("Enter another ADJECTIVE: ")
-            noun11 = input("Enter a singular NOUN: ")
-            verb8 = input("Enter a present tense VERB: ")
-            adjective11 = input("Enter another ADJECTIVE: ")
-            print(episode2_title + noun8)
-            print("There is unrest in the Galactic")
-            print("Senate.", num_adj2, "solar")
-            print("systems have", verb4, "their")
-            print("intentions to", verb5, "the Republic.")
-            print("\nThis", adjective6, "movement,")
-            print("under the leadership of the")
-            print(adjective7, "Count Dooku, has")
-            print("made it difficult for the", adjective8)
-            print("number of Jedi Knights to", verb6)
-            print(noun9, "and", noun10, "in the galaxy.")
-            print("\nSenator Amidala, the", adjective9)
-            print("Queen of Naboo, is returning")
-            print("to the Galactic Senate to", verb7)
-            print("on the", adjective10, "issue of creating")
-            print("a(n)", noun11, "OF THE REPUBLIC")
-            print("to", verb8, "the", adjective11)
-            print("Jedi....")
-        elif num_choice == 3:
-            episode3_title = "\nEpisode III \nREVENGE OF THE "
-            noun12 = input("\nEnter a plural NOUN: ")
-            noun13 = input("Enter another plural NOUN: ")
-            adjective12 = input("Enter an ADJECTIVE: ")
-            noun14 = input("Enter another plural NOUN: ")
-            verb9 = input("Enter a present tense VERB ending in 's': ")
-            adjective13 = input("Enter another ADJECTIVE: ")
-            adjective14 = input("Enter another ADJECTIVE: ")
-            verb10 = input("Enter a past tense VERB: ")
-            verb11 = input("Enter another past tense VERB: ")
-            noun15 = input("Enter a singular NOUN: ")
-            noun16 = input("Enter another singular NOUN: ")
-            adjective15 = input("Enter another ADJECTIVE: ")
-            adjective16 = input("Enter another ADJECTIVE: ")
-            noun17 = input("Enter another singular NOUN: ")
-            num_adj3 = input("Enter any whole number greater than 1: ")
-            noun18 = input("Enter another singular NOUN: ")
-            adjective17 = input("Enter another ADJECTIVE: ")
-            print(episode3_title + noun12)
-            print("War! The Republic is crumbling")
-            print("under", noun13, "by the", adjective12)
-            print("Sith Lord, Count Dooku.")
-            print("There are", noun14, "on both sides.")
-            print("Evil", verb9, "everywhere.")
-            print("\nIn a", adjective13, "move, the")
-            print(adjective14, "droid leader, General")
-            print("Grievous, has", verb10, "into the")
-            print("Republic capital and", verb11)
-            print("Chancellor Palpatine,", noun15, "of")
-            print("the Galactic Senate.")
-            print("\nAs the Separatist", noun16, "Army")
-            print("attempts to flee the", adjective15)
-            print("capital with their", adjective16)
-            print(noun17 + ", " + num_adj3, "Jedi Knights lead a")
-            print("desperate", noun18, "to rescue the")
-            print(adjective17, "Chancellor....")        
-        elif num_choice == 4:
-            episode4_title = "\nEpisode IV"
-            print("Work in progress")
-            #Episode IV
-            #A NEW HOPE
-            #It is a period of civil war.
-            #Rebel spaceships, striking
-            #from a hidden base, have won
-            #their first victory against
-            #the evil Galactic Empire.
+    print("\nChoose your adventure carefully and may the Force be with you!")
+    num_choice = int(input("Pick a whole number from 1-9: "))
+    if num_choice == 1:
+        episode1_title = "\nEpisode I \nTHE PHANTOM "
+        noun1 = input("\nEnter a singular NOUN: ")
+        noun2 = input("Enter another singular NOUN: ")
+        adjective1 = input("Enter an ADJECTIVE: ")
+        adjective2 = input("Enter another ADJECTIVE: ")
+        noun3 = input("Enter a plural NOUN: ")
+        adjective3 = input("Enter another ADJECTIVE: ")
+        verb1 = input("Enter a past tense VERB: ")
+        noun4 = input("Enter another plural NOUN: ")
+        adverb1 = input("Enter an ADVERB: ")
+        verb2 = input("Enter a present tense VERB: ")
+        adjective4 = input("Enter another ADJECTIVE: ")
+        noun5 = input("Enter another plural NOUN: ")
+        adjective5 = input("Enter another ADJECTIVE: ")
+        verb3 = input("Enter a past tense VERB: ")
+        num_adj1 = input("Enter any whole number greater than 1: ")
+        noun6 = input("Enter another plural NOUN: ")
+        noun7 = input("Enter another plural NOUN: ")
+        print(episode1_title + noun1.upper())
+        print("\nTurmoil has engulfed the")
+        print("Galactic", noun2 + ".", "The taxation")
+        print("of", adjective1, "routes to outlying", adjective2)
+        print("systems is in dispute.")
+        print("\nHoping to resolve the matter")
+        print("with a blockade of deadly")
+        print(noun3 + ",", "the", adjective3, "Trade")
+        print("Federation has", verb1, "all")
+        print(noun4, "to the", adjective4, "planet")
+        print("of Naboo.")
+        print("\nWhile the Congress of the")
+        print("Republic", adverb1, verb2)
+        print("this alarming chain of", noun5 + ",")
+        print("the", adjective5, "Chancellor has")
+        print("secretly", verb3, num_adj1, "Jedi")
+        print("Knights, the guardians of")
+        print(noun6, "and", noun7, "in the")
+        print("galaxy, to settle the conflict....")
+    elif num_choice == 2:
+        episode2_title = "\nEpisode II \nATTACK OF THE "
+        noun1 = input("\nEnter a plural NOUN: ")
+        num_adj1 = input("Enter any whole number greater than 1: ")
+        verb1 = input("Enter a past tense VERB: ")
+        verb2 = input("Enter a present tense VERB: ")
+        adjective1 = input("Enter an ADJECTIVE: ")
+        adjective2 = input("Enter another ADJECTIVE: ")
+        adjective3 = input("Enter another ADJECTIVE: ")
+        verb3 = input("Enter a present tense VERB: ")
+        noun2 = input("Enter another plural NOUN: ")
+        noun3 = input("Enter another plural NOUN: ")
+        adjective4 = input("Enter another ADJECTIVE: ")
+        verb4 = input("Enter a present tense VERB: ")
+        adjective5 = input("Enter another ADJECTIVE: ")
+        noun4 = input("Enter a singular NOUN: ")
+        verb5 = input("Enter a present tense VERB: ")
+        adjective6 = input("Enter another ADJECTIVE: ")
+        print(episode2_title + noun1.upper())
+        print("\nThere is unrest in the Galactic")
+        print("Senate.", num_adj1, "solar")
+        print("systems have", verb1, "their")
+        print("intentions to", verb2, "the Republic.")
+        print("\nThis", adjective1, "movement,")
+        print("under the leadership of the")
+        print(adjective2, "Count Dooku, has")
+        print("made it difficult for the", adjective3)
+        print("number of Jedi Knights to", verb3)
+        print(noun2, "and", noun3, "in the galaxy.")
+        print("\nSenator Amidala, the", adjective4)
+        print("Queen of Naboo, is returning")
+        print("to the Galactic Senate to", verb4)
+        print("on the", adjective5, "issue of creating")
+        print("a(n)", noun4.upper(), "OF THE REPUBLIC")
+        print("to", verb5, "the", adjective6)
+        print("Jedi....")
+    elif num_choice == 3:
+        episode3_title = "\nEpisode III \nREVENGE OF THE "
+        noun1 = input("\nEnter a plural NOUN: ")
+        noun2 = input("Enter another plural NOUN: ")
+        adjective1 = input("Enter an ADJECTIVE: ")
+        noun3 = input("Enter another plural NOUN: ")
+        verb1 = input("Enter a present tense VERB ending in 's': ")
+        adjective2 = input("Enter another ADJECTIVE: ")
+        adjective3 = input("Enter another ADJECTIVE: ")
+        verb2 = input("Enter a past tense VERB: ")
+        verb3 = input("Enter another past tense VERB: ")
+        noun4 = input("Enter a singular NOUN: ")
+        noun5 = input("Enter another singular NOUN: ")
+        adjective4 = input("Enter another ADJECTIVE: ")
+        adjective5 = input("Enter another ADJECTIVE: ")
+        noun6 = input("Enter another singular NOUN: ")
+        num_adj1 = input("Enter any whole number greater than 1: ")
+        noun7 = input("Enter another singular NOUN: ")
+        adjective6 = input("Enter another ADJECTIVE: ")
+        print(episode3_title + noun1.upper())
+        print("\nWar! The Republic is crumbling")
+        print("under", noun2, "by the", adjective1)
+        print("Sith Lord, Count Dooku.")
+        print("There are", noun3, "on both sides.")
+        print("Evil", verb1, "everywhere.")
+        print("\nIn a", adjective2, "move, the")
+        print(adjective3, "droid leader, General")
+        print("Grievous, has", verb2, "into the")
+        print("Republic capital and", verb3)
+        print("Chancellor Palpatine,", noun4, "of")
+        print("the Galactic Senate.")
+        print("\nAs the Separatist", noun5, "Army")
+        print("attempts to flee the", adjective4)
+        print("capital with their", adjective5)
+        print(noun6 + ", " + num_adj1, "Jedi Knights lead a")
+        print("desperate", noun7, "to rescue the")
+        print(adjective6, "Chancellor....")        
+    elif num_choice == 4:
+        episode4_title = "\nEpisode IV \nA NEW "
+        noun1 = input("Enter a singular NOUN: ")
+            
+        print(episode4_title + noun1.upper())
+        print("\nIt is a period of civil war.")
+        print("Rebel spaceships, striking")
+        print("from a hidden base, have won")
+        print("their first victory against")
+        print("the evil Galactic Empire.")
+        print("\nDuring the battle, Rebel")
+        print("spies managed to steal secret")
+        print("plans to the Empire's")
+        print("ultimate weapon, the DEATH")
+        print("STAR, an armored space")
+        print("station with enough power to")
+        print("destroy an entire planet.")
+        print("\nPursued by the Empire's")
+        print("sinister agents, Princess")
+        print("Leia races home aboard her")
+        print("starship, custodian of the")
+        print("stolen plans that can save")
+        print("her people and restore")
+        print("freedom to the galaxy.....")
+    elif num_choice == 5:
+        episode5_title = "\nEpisode V \nTHE "
+        episode5_title2 = "STRIKES BACK"
+        noun1 = input("Enter a singular NOUN: ")
 
-            #During the battle, Rebel
-            #spies managed to steal secret
-            #plans to the Empire's
-            #ultimate weapon, the DEATH
-            #STAR, an armored space
-            #station with enough power to
-            #destroy an entire planet.
-
-            #Pursued by the Empire's
-            #sinister agents, Princess
-            #Leia races home aboard her
-            #starship, custodian of the
-            #stolen plans that can save
-            #her people and restore
-            #freedom to the galaxy.....
-        elif num_choice == 5:
-            episode5_title = "\nEpisode V"
-            print("Work in progress")
-            #Episode V
-            #THE EMPIRE STRIKES BACK
-            #It is a dark time for the
-            #Rebellion. Although the Death
-            #Star has been destroyed,
-            #Imperial troops have driven the
-            #Rebel forces from their hidden
-            #base and pursued them across
-            #the galaxy.
-
-            #Evading the dreaded Imperial
-            #Starfleet, a group of freedom
-            #fighters led by Luke Skywalker
-            #has established a new secret
-            #base on the remote ice world
-            #of Hoth.
-
-            #The evil lord Darth Vader,
-            #obsessed with finding young
-            #Skywalker, has dispatched
-            #thousands of remote probes into
-            #the far reaches of space....
-        elif num_choice == 6:
-            episode6_title = "\nEpisode VI \nRETURN OF THE "
-            print("Work in progress")
-            #Episode VI
-            #RETURN OF THE JEDI
-            #Luke Skywalker has returned to
-            #his home planet of Tatooine in
-            #an attempt to rescue his
-            #friend Han Solo from the
-            #clutches of the vile gangster
-            #Jabba the Hutt.
-
-            #Little does Luke know that the
-            #GALACTIC EMPIRE has secretly
-            #begun construction on a new
-            #armored space station even
-            #more powerful than the first
-            #dreaded Death Star.
-
-            #When completed, this ultimate
-            #weapon will spell certain doom
-            #for the small band of rebels
-            #struggling to restore freedom
-            #to the galaxy....
-        elif num_choice == 7:
-            episode7_title = "\nEpisode VII"
-            print("Work in progress")
-            #Episode VII
-            #THE FORCE AWAKENS
-            #Luke Skywalker has vanished.
-            #In his absence, the sinister
-            #FIRST ORDER has risen from
-            #the ashes of the Empire
-            #and will not rest until
-            #Skywalker, the last Jedi,
-            #has been destroyed.
-
-            #With the support of the
-            #REPUBLIC, General Leia Organa
-            #leads a brave RESISTANCE.
-            #She is desperate to find her
-            #brother Luke and gain his
-            #help in restoring peace
-            #and justice to the galaxy.
-
-            #Leia has sent her most daring
-            #pilot on a secret mission
-            #to Jakku, where an old ally
-            #has discovered a clue to
-            #Luke's whereabouts....
-        elif num_choice == 8:
-            episode8_title = "\nEpisode VIII \nTHE LAST "
-            print("Work in progress")
-            #Episode VIII
-            #THE LAST JEDI
-            #The FIRST ORDER reigns.
-            #Having decimated the peaceful
-            #Republic, Supreme Leader Snoke
-            #now deploys the merciless
-            #legions to seize military
-            #control of the galaxy.
-
-            #Only General Leia Organa's
-            #band of RESISTANCE fighters
-            #stand against the rising
-            #tyranny, certain that Jedi
-            #Master Luke Skywalker will
-            #return and restore a spark of
-            #hope to the fight.
-
-            #But the Resistance has been
-            #exposed. As the First Order
-            #speeds toward the rebel base,
-            #the brave heroes mount a
-            #desperate escape....
-        elif num_choice == 9:
-            episode9_title = "\nEpisdoe IX \nTHE RISE OF "
-            print("Work in progress")
-            #Episode IX
-            #THE RISE OF SKYWALKER
-            #The dead speak! The galaxy has
-            #heard a mysterious broadcast,
-            #a threat of REVENGE in the
-            #sinister voice of the late
-            #EMPEROR PALPATINE.
-
-            #GENERAL LEIA ORGANA
-            #dispatches secret agents to
-            #gather intelligence, while REY,
-            #the last hope of the Jedi, trains
-            #for battle against the diabolical
-            #FIRST ORDER.
-
-            #Meanwhile, Supreme Leader
-            #KYLO REN rages in search
-            #of the phantom Emperor,
-            #determined to destroy any
-            #threat to his power....
-        else:
-            print("You have chosen the DARK SIDE OF THE FORCE!!!")
-    retryStory = input("\nEnter 's' to try another story: ")
+        print(episode5_title + noun1.upper() + episode5_title2)
+        print("\nIt is a dark time for the")
+        print("Rebellion. Although the Death")
+        print("Star has been destroyed,")
+        print("Imperial troops have driven the")
+        print("Rebel forces from their hidden")
+        print("base and pursued them across")
+        print("the galaxy.")
+        print("\nEvading the dreaded Imperial")
+        print("Starfleet, a group of freedom")
+        print("fighters led by Luke Skywalker")
+        print("has established a new secret")
+        print("base on the remote ice world")
+        print("of Hoth.")
+        print("\nThe evil lord Darth Vader,")
+        print("obsessed with finding young")
+        print("Skywalker, has dispatched")
+        print("thousands of remote probes into")
+        print("the far reaches of space....")
+    elif num_choice == 6:
+        episode6_title = "\nEpisode VI \nRETURN OF THE "
+        noun1 = input("Enter a singular NOUN: ")
+            
+        print(episode6_title + noun1.upper())
+        print("\nLuke Skywalker has returned to")
+        print("his home planet of Tatooine in")
+        print("an attempt to rescue his")
+        print("friend Han Solo from the")
+        print("clutches of the vile gangster")
+        print("Jabba the Hutt.")
+        print("\nLittle does Luke know that the")
+        print("GALACTIC EMPIRE has secretly")
+        print("begun construction on a new")
+        print("armored space station even")
+        print("more powerful than the first")
+        print("dreaded Death Star.")
+        print("\nWhen completed, this ultimate")
+        print("weapon will spell certain doom")
+        print("for the small band of rebels")
+        print("struggling to restore freedom")
+        print("to the galaxy....")
+    elif num_choice == 7:
+        episode7_title = "\nEpisode VII \nTHE "
+        episode7_title2 = " AWAKENS"
+        noun1 = input("Enter a singular NOUN: ")
+            
+        print(episode7_title + noun1.upper() + episode7_title2)
+        print("\nLuke Skywalker has vanished.")
+        print("In his absence, the sinister")
+        print("FIRST ORDER has risen from")
+        print("the ashes of the Empire")
+        print("and will not rest until")
+        print("Skywalker, the last Jedi,")
+        print("has been destroyed.")
+        print("\nWith the support of the")
+        print("REPUBLIC, General Leia Organa")
+        print("leads a brave RESISTANCE.")
+        print("She is desperate to find her")
+        print("brother Luke and gain his")
+        print("help in restoring peace")
+        print("and justice to the galaxy.")
+        print("\nLeia has sent her most daring")
+        print("pilot on a secret mission")
+        print("to Jakku, where an old ally")
+        print("has discovered a clue to")
+        print("Luke's whereabouts....")
+    elif num_choice == 8:
+        episode8_title = "\nEpisode VIII \nTHE LAST "
+        noun1 = input("\nEnter a singular NOUN: ")
+        noun2 = input("Enter another singular NOUN: ")
+        adjective1 = input("Enter an ADJECTIVE: ")
+        lastName = input("Enter someone's last name: ")
+        noun3 = input("Enter a plural NOUN: ")
+        noun4 = input("Enter another singular NOUN: ")
+        noun5 = input("Enter another plural NOUN: ")
+        verb1 = input("Enter a present tense VERB: ")
+        fullName = input("Enter someone's full name: ")
+        noun6 = input("Enter a body part: ")
+        noun7 = input("Enter another singular NOUN: ")
+        verb2 = input("Enter a verb ending in 's': ")
+        adjective2 = input("Enter another ADJECTIVE: ")
+        adjective3 = input("Enter another ADJECTIVE: ")
+        adjective4 = input("Enter another ADJECTIVE: ")  
+        print(episode8_title + noun1.upper())
+        print("\nThe FIRST", noun2.upper(), "reigns.")
+        print("Having decimated the", adjective1)
+        print("Republic, Supreme Leader", lastName.upper())
+        print("now deploys the merciless")
+        print(noun3, "to seize military")
+        print("control of the", noun4 + ".")
+        print("\nOnly General Leia Organa's")
+        print("band of RESISTANCE", noun5)
+        print(verb1, "against the rising")
+        print("tyranny, certain that Jedi")
+        print("Master", fullName.upper(), "will")
+        print("return and restore a", noun6, "of")
+        print("hope to the fight.")
+        print("\nBut the Resistance has been")
+        print("exposed. As the FIRST", noun7.upper())
+        print(verb2, "toward the", adjective2, "base,")
+        print("the", adjective3, "heroes mount a")
+        print(adjective4, "escape....")
+    elif num_choice == 9:
+        episode9_title = "\nEpisdoe IX \nTHE RISE OF "
+        lastName1 = input("\nEnter someone's last name: ")
+        noun1 = input("Enter a plural NOUN: ")
+        noun2 = input("Enter a singular NOUN: ")
+        adjective1 = input("Enter an ADJECTIVE: ")
+        adjective2 = input("Enter another ADJECTIVE: ")
+        adjective3 = input("Enter another ADJECTIVE: ")
+        lastName2 = input("Enter someone's last name: ")
+        noun3 = input("Enter another plural NOUN: ")
+        firstName = input("Enter someone's first name: ")
+        noun4 = input("Enter another singular NOUN: ")
+        adjective4 = input("Enter another ADJECTIVE: ")
+        noun5 = input("Enter another singular NOUN: ")
+        fullName = input("Enter someone's full name: ")
+        noun6 = input("Enter another singular NOUN: ")
+        noun7 = input("Enter another singular NOUN: ")
+        print(episode9_title + lastName1.upper())
+        print("\nThe", noun1, "speak! The", noun2, "has")
+        print("heard a", adjective1, "broadcast,")
+        print("a threat of REVENGE in the")
+        print(adjective2, "voice of the", adjective3)
+        print("EMPEROR", lastName2.upper() + ".")
+        print("\nGENERAL LEIA ORGANA")
+        print("dispatches secret", noun3, "to")
+        print("gather intelligence, while", firstName.upper() + ",")
+        print("the last", noun4, "of the Jedi, trains")
+        print("for battle against the", adjective4)
+        print("FIRST", noun5.upper() + ".")
+        print("\nMeanwhile, Supreme Leader")
+        print(fullName.upper(), "rages in search")
+        print("of the phantom", noun6 + ",")
+        print("determined to destroy any")
+        print("threat to his/her", noun7 + "....")
+    else:
+        print("You have chosen the DARK SIDE OF THE FORCE!!!")
+    retryStory = input("\nEnter 's' to try another story or any other key to quit: ")
 print("\nMay the FORCE be with you!!!")
