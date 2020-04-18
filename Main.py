@@ -1,145 +1,139 @@
-# Donald Browney
-# My Integration Project
-# A Mad Lib story utilizing the opening crawls for Star Wars Episodes 1 through 9 preceded with a short quiz on Star Wars facts
+"""
+This is the main file for my integration project. My Integration Project is Mad
+Lib story utilizing the opening crawls for Star Wars Episodes 1 through 9
+preceded with a short quiz on Star Wars facts.
 
-# Credit is due to Leonard Stern and Roger Price who invented Mad Libs in 1953
-# Opening crawls were taken directly from the Star Wars movies whose rights belong to Disney
+Credit is due to Leonard Stern and Roger Price who invented Mad Libs in 1953.
 
-# So far, coding help has only come from w3schools.com, class assignments, and the Mobile App "SoloLearn"
+Opening crawls were taken directly from the Star Wars movies whose rights
+belong to Disney.
+
+Coding help has only come from w3schools.com, FGCU COP 1500 class assignments,
+and the Mobile App "SoloLearn".
+"""
+__author__ = "Donald Browney"
 
 import time
 
-def calculateDifficulty(num1, num2, num3):
-    total = num1 + num2 + num3
-    return total
+
+def intro():
+    """
+    Prints multiple lines of asterisks which together form the words 'STAR
+    WARS'. It also prints an opening monologue.
+    """
+    print(
+        "******** *********   *****   *********   *** *** ***   *****   "
+        "********* ********")
+    time.sleep(1)
+    print(
+        "******** ********* ***   *** ***   ***   *** *** *** ***   *** ***   "
+        "*** ********")
+    time.sleep(1)
+    print(
+        "***         ***    ***   *** ***   ***   *** *** *** ***   *** ***   "
+        "*** ***     ")
+    time.sleep(1)
+    print(
+        "********    ***    ********* *********   *** *** *** ********* "
+        "********* ********")
+    time.sleep(1)
+    print(
+        "********    ***    ********* ********    *** *** *** ********* "
+        "********  ********")
+    time.sleep(1)
+    print(
+        "     ***    ***    ***   *** *** ***     *** *** *** ***   *** *** "
+        "***        ***")
+    time.sleep(1)
+    print(
+        "********    ***    ***   *** ***  ***    *********** ***   *** ***  "
+        "***  ********")
+    time.sleep(1)
+    print(
+        "********    ***    ***   *** ***   ***   *********** ***   *** ***   "
+        "*** ********")
+    time.sleep(2)
+    print("\nHELLO...and welcome to the newest story in the Star Wars saga!")
+    time.sleep(2)
+    print(
+        "\nBefore we start we need to test and see if your midichlorian level "
+        "is high enough!!!\n")
+    time.sleep(3)
+
+
+def quiz():
+    """
+    Prints 10 questions, one at a time, for the user to answer and also
+    prints a message based on how they answered the question.
+    :return: It returns the number of questions the user answered correctly.
+    """
+    quiz_questions = ["What is the first name of Boba Fett's father? ",
+                      "What color was Jedi Master Mace Windu's lightsaber? ",
+                      "What was Princess Leia's adopted last name? ",
+                      "What type of crystal powers a lightsaber? ",
+                      "Cloud City was a mining colony on what planet? ",
+                      "What were the small, teddy bear-like creatures called "
+                      "in 'Return of the Jedi'? ",
+                      "What is the mysterious energy field created by life "
+                      "that binds the galaxy together? The ",
+                      "What is the Sith name for Emperor Palpatine? ",
+                      "Luke Skywalker grew up on which planet? ",
+                      "What is the name of Han Solo's starship? "]
+    quiz_answers = ["jango", "purple", "organa", "kyber", "bespin", "ewoks",
+                    "force", "darth sidious", "tatooine",
+                    "millennium falcon"]
+
+    num_correct = 0
+    counter = 0
+
+    for question in quiz_questions:
+        user_answer = input(question)
+        if user_answer.lower() == quiz_answers[counter]:
+            print("Correct")
+            num_correct += 1
+        else:
+            print("Incorrect")
+        counter += 1
+    return num_correct
+
+
+def calculate_score(num1):
+    """
+    Calculates the total score based on correct number of questions.
+    :param num1: The total number of correct questions from quiz
+    :return: The total number of points.
+    """
+    points = num1 * 2100
+    return points
+
+
+def score_table():
+    """
+    Prints lines displaying the scoring structure.
+    """
+    print("\n20,001 and above = THE CHOSEN ONE!")
+    print("15,001 to 20,000 = Jedi Master")
+    print("10,001 to 15,000 = Padawan")
+    print("5,001 to 10,000  = Youngling")
+    print("5,000 and below  = Force-sensitive\n")
+
 
 def main():
-    question_easy = (question6 + question7 + question9 + question10) * 5
-    #print(question_easy) #used for testing purposes
-    question_medium = (question3 + question5 + question8) * 9
-    #print(question_medium) #used for testing purposes
-    question_hard = (question1 + question2 + question4) * 15
-    #print(question_hard) #used for testing purposes
-    score = calculateDifficulty(question_easy, question_medium, question_hard)
-    score *= 45
+    """
+    Runs the intro, quiz, and score table functions and also prints the
+    user's final score.
+    """
+    intro()
+    total_correct = quiz()
+    score = calculate_score(total_correct)
+    score_table()
     print("Your Score =", score)
-    
-print("******** *********   *****   *********   *** *** ***   *****   ********* ********")
-time.sleep(1)
-print("******** ********* ***   *** ***   ***   *** *** *** ***   *** ***   *** ********")
-time.sleep(1)
-print("***         ***    ***   *** ***   ***   *** *** *** ***   *** ***   *** ***     ")
-time.sleep(1)
-print("********    ***    ********* *********   *** *** *** ********* ********* ********")
-time.sleep(1)
-print("********    ***    ********* ********    *** *** *** ********* ********  ********")
-time.sleep(1)
-print("     ***    ***    ***   *** *** ***     *** *** *** ***   *** *** ***        ***")
-time.sleep(1)
-print("********    ***    ***   *** ***  ***    *********** ***   *** ***  ***  ********")
-time.sleep(1)
-print("********    ***    ***   *** ***   ***   *********** ***   *** ***   *** ********")
-time.sleep(2)
 
-print("\nHELLO...and welcome to the newest story in the Star Wars saga!")
-time.sleep(2)
-print("\nBefore we start we need to test and see if your midichlorian level is high enough!!!\n")
-time.sleep(3)
-question1 = input("What is the first name of Boba Fett's father? ")
-answer1 = "JANGO"
-if question1.upper() == answer1:
-    print("Correct")
-    question1 = 5
-else:
-    print("Incorrect")
-    question1 = 0
-question2 = input("What color was Jedi Master Mace Windu's lightsaber? ")
-answer2 = "PURPLE"
-if question2.upper() == answer2:
-    print("Correct")
-    question2 = 5
-else:
-    print("Incorrect")
-    question2 = 0
-question3 = input("What was Princess Leia's adopted last name? ")
-answer3 = "ORGANA"
-if question3.upper() == answer3:
-    print("Correct")
-    question3 = 5
-else:
-    print("Incorrect")
-    question3 = 0
-question4 = input("What type of crystal powers a lightsaber? ")
-answer4 = "KYBER"
-if question4.upper() == answer4:
-    print("Correct")
-    question4 = 5
-else:
-    print("Incorrect")
-    question4 = 0
-question5 = input("Cloud City was a mining colony on what planet? ")
-answer5 = "BESPIN"
-if question5.upper() == answer5:
-    print("Correct")
-    question5 = 5
-else:
-    print("Incorrect")
-    question5 = 0
-question6 = input("What were the small, teddy bear-like creatures called in 'Return of the Jedi'? ")
-answer6 = "EWOKS"
-if question6.upper() == answer6:
-    print("Correct")
-    question6 = 5
-else:
-    print("Incorrect")
-    question6 = 0
-question7 = input("What is the mysterious energy field created by life that binds the galaxy together? ")
-answer7_1 = "THE FORCE"
-answer7_2 = "FORCE"
-if question7.upper() == answer7_1:
-    print("Correct")
-    question7 = 5
-elif question7.upper() == answer7_2:
-    print("Correct")
-    question7 = 5
-else:
-    print("Incorrect")
-    question7 = 0
-question8 = input("What is the Sith name for Emperor Palpatine? ")
-answer8 = "DARTH SIDIOUS"
-if question8.upper() == answer8:
-    print("Correct")
-    question8 = 5
-else:
-    print("Incorrect")
-    question8 = 0
-question9 = input("Luke Skywalker grew up on which planet? ")
-answer9 = "TATOOINE"
-if question9.upper() == answer9:
-    print("Correct")
-    question9 = 5
-else:
-    print("Incorrect")
-    question9 = 0
-question10 = input("What is the name of Han Solo's starship? ")
-answer10 = "MILLENIUM FALCON"
-if question10.upper() == answer10:
-    print("Correct")
-    question10 = 5
-else:
-    print("Incorrect")
-    question10 = 0
-
-print("\n20,001 and above = THE CHOSEN ONE!")
-print("15,001 to 20,000 = Jedi Master")
-print("10,001 to 15,000 = Padawan")
-print("5,001 to 10,000  = Youngling")
-print("5,000 and below  = Force-sensitive\n")
 
 main()
 
-retryStory = "s"
-while retryStory == "s":
+retry_story = "s"
+while retry_story == "s":
     print("\nChoose your adventure carefully and may the Force be with you!")
     num_choice = int(input("Pick a whole number from 1-9: "))
     if num_choice == 1:
@@ -252,123 +246,175 @@ while retryStory == "s":
         print("capital with their", adjective5)
         print(noun6 + ", " + num_adj1, "Jedi Knights lead a")
         print("desperate", noun7, "to rescue the")
-        print(adjective6, "Chancellor....")        
+        print(adjective6, "Chancellor....")
     elif num_choice == 4:
         episode4_title = "\nEpisode IV \nA NEW "
         noun1 = input("Enter a singular NOUN: ")
-            
+        adjective1 = input("Enter an ADJECTIVE: ")
+        verb1 = input("Enter a present tense VERB ending in 'ing': ")
+        noun2 = input("Enter another singular NOUN: ")
+        adjective2 = input("Enter another ADJECTIVE: ")
+        noun3 = input("Enter a plural NOUN: ")
+        noun4 = input("Enter another plural NOUN: ")
+        adjective3 = input("Enter another ADJECTIVE: ")
+        noun5 = input("Enter another singular NOUN: ")
+        noun6 = input("Enter another singular NOUN: ")
+        noun7 = input("Enter another singular NOUN: ")
+        noun8 = input("Enter another plural NOUN: ")
+        first_name = input("Enter someone's first name: ")
+        noun9 = input("Enter another singular NOUN: ")
+        noun10 = input("Enter another plural NOUN: ")
         print(episode4_title + noun1.upper())
         print("\nIt is a period of civil war.")
-        print("Rebel spaceships, striking")
-        print("from a hidden base, have won")
+        print(adjective1, "spaceships,", verb1)
+        print("from a hidden", noun2 + ", have won")
         print("their first victory against")
-        print("the evil Galactic Empire.")
+        print("the", adjective2, "Galactic Empire.")
         print("\nDuring the battle, Rebel")
-        print("spies managed to steal secret")
-        print("plans to the Empire's")
-        print("ultimate weapon, the DEATH")
-        print("STAR, an armored space")
-        print("station with enough power to")
-        print("destroy an entire planet.")
+        print(noun3, "managed to steal secret")
+        print(noun4, "to the Empire's")
+        print(adjective3, "weapon, the DEATH")
+        print(noun5.upper() + ", an armored space")
+        print(noun6, "with enough power to")
+        print("destroy an entire", noun7 + ".")
         print("\nPursued by the Empire's")
-        print("sinister agents, Princess")
-        print("Leia races home aboard her")
-        print("starship, custodian of the")
-        print("stolen plans that can save")
-        print("her people and restore")
+        print("sinister", noun8 + ", Princess")
+        print(first_name, "races home aboard her")
+        print(noun9 + ", custodian of the")
+        print("stolen", noun4, "that can save")
+        print("her", noun10, "and restore")
         print("freedom to the galaxy.....")
     elif num_choice == 5:
         episode5_title = "\nEpisode V \nTHE "
-        episode5_title2 = "STRIKES BACK"
+        episode5_title2 = " STRIKES BACK"
         noun1 = input("Enter a singular NOUN: ")
-
+        adjective1 = input("Enter an ADJECTIVE: ")
+        adjective2 = input("Enter another ADJECTIVE: ")
+        verb1 = input("Enter a past tense VERB ending in 'ed': ")
+        noun2 = input("Enter a plural NOUN: ")
+        noun3 = input("Enter another plural NOUN: ")
+        noun4 = input("Enter another singular NOUN: ")
+        verb2 = input("Enter another past tense VERB ending in 'ed': ")
+        adjective3 = input("Enter another ADJECTIVE: ")
+        adjective4 = input("Enter another ADJECTIVE: ")
+        first_name = input("Enter someone's first name: ")
+        last_name1 = input("Enter someone's last name: ")
+        adjective5 = input("Enter another ADJECTIVE: ")
+        adjective6 = input("Enter another ADJECTIVE: ")
+        last_name2 = input("Enter someone's last name: ")
+        noun5 = input("Enter another plural NOUN: ")
         print(episode5_title + noun1.upper() + episode5_title2)
-        print("\nIt is a dark time for the")
-        print("Rebellion. Although the Death")
-        print("Star has been destroyed,")
-        print("Imperial troops have driven the")
-        print("Rebel forces from their hidden")
-        print("base and pursued them across")
+        print("\nIt is a", adjective1, "time for the")
+        print("Rebellion. Although the", adjective2)
+        print("Star has been", verb1 + ",")
+        print("Imperial", noun2, "have driven the")
+        print("Rebel", noun3, "from their hidden")
+        print(noun4, "and", verb2, "them across")
         print("the galaxy.")
-        print("\nEvading the dreaded Imperial")
-        print("Starfleet, a group of freedom")
-        print("fighters led by Luke Skywalker")
-        print("has established a new secret")
-        print("base on the remote ice world")
+        print("\nEvading the", adjective3, "Imperial")
+        print("Starfleet, a group of", adjective4)
+        print("fighters led by", first_name, last_name1)
+        print("has established a new", adjective5)
+        print("base on the", adjective6, "ice world")
         print("of Hoth.")
-        print("\nThe evil lord Darth Vader,")
+        print("\nThe evil lord Darth", last_name2 + ",")
         print("obsessed with finding young")
-        print("Skywalker, has dispatched")
-        print("thousands of remote probes into")
+        print(last_name1 + ", has dispatched")
+        print("thousands of remote", noun5, "into")
         print("the far reaches of space....")
     elif num_choice == 6:
         episode6_title = "\nEpisode VI \nRETURN OF THE "
         noun1 = input("Enter a singular NOUN: ")
-            
+        first_name1 = input("Enter someone's first name: ")
+        last_name = input("Enter someone's last name: ")
+        adjective1 = input("Enter an ADJECTIVE: ")
+        full_name = input("Enter someone's full name: ")
+        first_name2 = input("Enter someone's first name: ")
+        noun2 = input("Enter another singular NOUN: ")
+        noun3 = input("Enter another singular NOUN: ")
+        adjective2 = input("Enter another ADJECTIVE: ")
+        noun4 = input("Enter another singular NOUN: ")
+        verb1 = input("Enter a past tense VERB ending in 'ed': ")
+        adjective3 = input("Enter another ADJECTIVE: ")
+        noun5 = input("Enter a plural NOUN: ")
+        verb2 = input("Enter a present tense VERB ending in 'ing': ")
         print(episode6_title + noun1.upper())
-        print("\nLuke Skywalker has returned to")
+        print("\n" + first_name1, last_name, "has returned to")
         print("his home planet of Tatooine in")
         print("an attempt to rescue his")
-        print("friend Han Solo from the")
-        print("clutches of the vile gangster")
-        print("Jabba the Hutt.")
-        print("\nLittle does Luke know that the")
-        print("GALACTIC EMPIRE has secretly")
+        print("friend", full_name, "from the")
+        print("clutches of the", adjective1, "gangster")
+        print(first_name2, "the Hutt.")
+        print("\nLittle does", first_name1, "know that the")
+        print("GALACTIC", noun2.upper(), "has secretly")
         print("begun construction on a new")
-        print("armored space station even")
+        print("armored space", noun3, "even")
         print("more powerful than the first")
-        print("dreaded Death Star.")
-        print("\nWhen completed, this ultimate")
+        print(adjective2, "Death", noun4 + ".")
+        print("\nWhen", verb1 + ", this ultimate")
         print("weapon will spell certain doom")
-        print("for the small band of rebels")
-        print("struggling to restore freedom")
+        print("for the", adjective3, "band of", noun5)
+        print(verb2, "to restore freedom")
         print("to the galaxy....")
     elif num_choice == 7:
         episode7_title = "\nEpisode VII \nTHE "
         episode7_title2 = " AWAKENS"
         noun1 = input("Enter a singular NOUN: ")
-            
+        first_name1 = input("Enter someone's first name: ")
+        last_name1 = input("Enter someone's last name: ")
+        noun2 = input("Enter another singular NOUN: ")
+        noun3 = input("Enter a plural NOUN: ")
+        adjective1 = input("Enter an ADJECTIVE: ")
+        verb1 = input("Enter a past tense VERB ending in 'ed': ")
+        first_name2 = input("Enter someone's first name: ")
+        last_name2 = input("Enter someone's last name: ")
+        adjective2 = input("Enter another ADJECTIVE: ")
+        noun4 = input("Enter another singular NOUN: ")
+        noun5 = input("Enter another plural NOUN: ")
+        noun6 = input("Enter another singular NOUN: ")
+        adjective3 = input("Enter another ADJECTIVE: ")
+        noun7 = input("Enter another singular NOUN: ")
         print(episode7_title + noun1.upper() + episode7_title2)
-        print("\nLuke Skywalker has vanished.")
+        print("\n" + first_name1, last_name1, "has vanished.")
         print("In his absence, the sinister")
-        print("FIRST ORDER has risen from")
-        print("the ashes of the Empire")
+        print("FIRST", noun2.upper(), "has risen from")
+        print("the", noun3, "of the Empire")
         print("and will not rest until")
-        print("Skywalker, the last Jedi,")
-        print("has been destroyed.")
+        print(last_name1 + ", the", adjective1, "Jedi,")
+        print("has been", verb1 + ".")
         print("\nWith the support of the")
-        print("REPUBLIC, General Leia Organa")
-        print("leads a brave RESISTANCE.")
+        print("REPUBLIC, General", first_name2, last_name2)
+        print("leads a", adjective2, "RESISTANCE.")
         print("She is desperate to find her")
-        print("brother Luke and gain his")
+        print(noun4, first_name1, "and gain his")
         print("help in restoring peace")
-        print("and justice to the galaxy.")
-        print("\nLeia has sent her most daring")
-        print("pilot on a secret mission")
-        print("to Jakku, where an old ally")
+        print("and", noun5, "to the galaxy.")
+        print("\n" + first_name2, "has sent her most daring")
+        print(noun6, "on a", adjective3, "mission")
+        print("to Jakku, where an old", noun7)
         print("has discovered a clue to")
-        print("Luke's whereabouts....")
+        print(first_name1 + "'s whereabouts....")
     elif num_choice == 8:
         episode8_title = "\nEpisode VIII \nTHE LAST "
         noun1 = input("\nEnter a singular NOUN: ")
         noun2 = input("Enter another singular NOUN: ")
         adjective1 = input("Enter an ADJECTIVE: ")
-        lastName = input("Enter someone's last name: ")
+        last_name = input("Enter someone's last name: ")
         noun3 = input("Enter a plural NOUN: ")
         noun4 = input("Enter another singular NOUN: ")
         noun5 = input("Enter another plural NOUN: ")
         verb1 = input("Enter a present tense VERB: ")
-        fullName = input("Enter someone's full name: ")
+        full_name = input("Enter someone's full name: ")
         noun6 = input("Enter a body part: ")
         noun7 = input("Enter another singular NOUN: ")
         verb2 = input("Enter a verb ending in 's': ")
         adjective2 = input("Enter another ADJECTIVE: ")
         adjective3 = input("Enter another ADJECTIVE: ")
-        adjective4 = input("Enter another ADJECTIVE: ")  
+        adjective4 = input("Enter another ADJECTIVE: ")
         print(episode8_title + noun1.upper())
         print("\nThe FIRST", noun2.upper(), "reigns.")
         print("Having decimated the", adjective1)
-        print("Republic, Supreme Leader", lastName.upper())
+        print("Republic, Supreme Leader", last_name.upper())
         print("now deploys the merciless")
         print(noun3, "to seize military")
         print("control of the", noun4 + ".")
@@ -376,7 +422,7 @@ while retryStory == "s":
         print("band of RESISTANCE", noun5)
         print(verb1, "against the rising")
         print("tyranny, certain that Jedi")
-        print("Master", fullName.upper(), "will")
+        print("Master", full_name.upper(), "will")
         print("return and restore a", noun6, "of")
         print("hope to the fight.")
         print("\nBut the Resistance has been")
@@ -385,40 +431,41 @@ while retryStory == "s":
         print("the", adjective3, "heroes mount a")
         print(adjective4, "escape....")
     elif num_choice == 9:
-        episode9_title = "\nEpisdoe IX \nTHE RISE OF "
-        lastName1 = input("\nEnter someone's last name: ")
+        episode9_title = "\nEpisode IX \nTHE RISE OF "
+        last_name1 = input("\nEnter someone's last name: ")
         noun1 = input("Enter a plural NOUN: ")
         noun2 = input("Enter a singular NOUN: ")
         adjective1 = input("Enter an ADJECTIVE: ")
         adjective2 = input("Enter another ADJECTIVE: ")
         adjective3 = input("Enter another ADJECTIVE: ")
-        lastName2 = input("Enter someone's last name: ")
+        last_name2 = input("Enter someone's last name: ")
         noun3 = input("Enter another plural NOUN: ")
-        firstName = input("Enter someone's first name: ")
+        first_name = input("Enter someone's first name: ")
         noun4 = input("Enter another singular NOUN: ")
         adjective4 = input("Enter another ADJECTIVE: ")
         noun5 = input("Enter another singular NOUN: ")
-        fullName = input("Enter someone's full name: ")
+        full_name = input("Enter someone's full name: ")
         noun6 = input("Enter another singular NOUN: ")
         noun7 = input("Enter another singular NOUN: ")
-        print(episode9_title + lastName1.upper())
+        print(episode9_title + last_name1.upper())
         print("\nThe", noun1, "speak! The", noun2, "has")
         print("heard a", adjective1, "broadcast,")
         print("a threat of REVENGE in the")
         print(adjective2, "voice of the", adjective3)
-        print("EMPEROR", lastName2.upper() + ".")
+        print("EMPEROR", last_name2.upper() + ".")
         print("\nGENERAL LEIA ORGANA")
         print("dispatches secret", noun3, "to")
-        print("gather intelligence, while", firstName.upper() + ",")
+        print("gather intelligence, while", first_name.upper() + ",")
         print("the last", noun4, "of the Jedi, trains")
         print("for battle against the", adjective4)
         print("FIRST", noun5.upper() + ".")
         print("\nMeanwhile, Supreme Leader")
-        print(fullName.upper(), "rages in search")
+        print(full_name.upper(), "rages in search")
         print("of the phantom", noun6 + ",")
         print("determined to destroy any")
         print("threat to his/her", noun7 + "....")
     else:
         print("You have chosen the DARK SIDE OF THE FORCE!!!")
-    retryStory = input("\nEnter 's' to try another story or any other key to quit: ")
+    retry_story = input(
+        "\nEnter 's' to try another story or any other key to quit: ")
 print("\nMay the FORCE be with you!!!")
